@@ -151,14 +151,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CCommand.h" />
     <ClInclude Include="CGeneticAlgorithm.h" />
+    <ClInclude Include="CGetGeneticAlgorythmParametrsCommand.h" />
     <ClInclude Include="CKnapsackProblem.h" />
+    <ClInclude Include="CKnoapsackProblemCommand.h" />
+    <ClInclude Include="CMenu.h" />
+    <ClInclude Include="CMenuCommand.h" />
+    <ClInclude Include="CMenuItem.h" />
+    <ClInclude Include="CRunKnapsackProblemCommand.h" />
     <ClInclude Include="LAB4zmpo.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="ZmpoLab2Library.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CCommand.cpp" />
     <ClCompile Include="CGeneticAlgorithm.cpp" />
+    <ClCompile Include="CGetGeneticAlgorythmParametrsCommand.cpp" />
     <ClCompile Include="CKnapsackProblem.cpp" />
+    <ClCompile Include="CKnoapsackProblemCommand.cpp" />
+    <ClCompile Include="CMenu.cpp" />
+    <ClCompile Include="CMenuCommand.cpp" />
+    <ClCompile Include="CMenuItem.cpp" />
+    <ClCompile Include="CRunKnapsackProblemCommand.cpp" />
     <ClCompile Include="Lab4ZMPO.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

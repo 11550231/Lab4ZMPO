@@ -5,27 +5,63 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Resource Files\Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files\Header Files\Problem">
+      <UniqueIdentifier>{f9618141-7fd2-4984-a3b8-113f25ac5725}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Header Files\Menu">
+      <UniqueIdentifier>{6469ee87-a516-41f7-8903-d967ea79d553}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Header Files\Main">
+      <UniqueIdentifier>{6c958744-5ce1-4b94-b666-15e800f52774}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Header Files\ProblemMenu">
+      <UniqueIdentifier>{5de5c272-857a-4d16-a05e-05b72b531e82}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pch.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CKnapsackProblem.h">
-      <Filter>Header Files</Filter>
+      <Filter>Resource Files\Header Files\Problem</Filter>
     </ClInclude>
     <ClInclude Include="CGeneticAlgorithm.h">
-      <Filter>Header Files</Filter>
+      <Filter>Resource Files\Header Files\Problem</Filter>
+    </ClInclude>
+    <ClInclude Include="CMenu.h">
+      <Filter>Resource Files\Header Files\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommand.h">
+      <Filter>Resource Files\Header Files\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="CMenuCommand.h">
+      <Filter>Resource Files\Header Files\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="CMenuItem.h">
+      <Filter>Resource Files\Header Files\Menu</Filter>
     </ClInclude>
     <ClInclude Include="LAB4zmpo.h">
-      <Filter>Header Files</Filter>
+      <Filter>Resource Files\Header Files\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Resource Files\Header Files\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="ZmpoLab2Library.h">
+      <Filter>Resource Files\Header Files\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="CRunKnapsackProblemCommand.h">
+      <Filter>Resource Files\Header Files\ProblemMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="CKnoapsackProblemCommand.h">
+      <Filter>Resource Files\Header Files\ProblemMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="CGetGeneticAlgorythmParametrsCommand.h">
+      <Filter>Resource Files\Header Files\ProblemMenu</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -39,6 +75,27 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CGeneticAlgorithm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CMenuCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CMenuItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CKnoapsackProblemCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGetGeneticAlgorythmParametrsCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CRunKnapsackProblemCommand.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

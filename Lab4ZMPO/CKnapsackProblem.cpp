@@ -1,26 +1,40 @@
 #include "pch.h"
 #include "CKnapsackProblem.h"
 
-
-CKnapsackProblem::CKnapsackProblem()
+template < class T >
+CKnapsackProblem<T>::CKnapsackProblem()
 {
 	objectsSizesAndValuesTableSize = TABLE_UNDEFINED;
 	objectsValueAndSizesTable =nullptr;
 }
-bool CKnapsackProblem::checkIfInputDataAreSet()
+template < class T >
+int CKnapsackProblem<T>::getSolutionSizesAndValuesTableSize()
+{
+	return objectsSizesAndValuesTableSize;
+}
+template < class T >
+bool CKnapsackProblem<T>::dataIsSet()
+{
+	if (objectsValueAndSizesTable == nullptr || objectsSizesAndValuesTableSize == TABLE_UNDEFINED)
+		return false;
+	return true;
+}
+template < class T >
+bool CKnapsackProblem<T>::checkIfInputDataAreSet()
 {
 	if (objectsSizesAndValuesTableSize < 0 || objectsValueAndSizesTable == nullptr)
 		return false;
 	else
 		return true;
 }
-int * CKnapsackProblem::calculateTheSolution(int populationSize,double crossProb,double mutProb, int iEliteIndyviduals)
+template < class T >
+T * CKnapsackProblem<T>::calculateTheSolution(int timeOfCalculationInSecundes)
 {
-
-	int * solution = CGeneticAlgorithm(objectsSizesAndValuesTableSize, this, populationSize, crossProb, mutProb, iEliteIndyviduals).runGeneticAlgorithm();
+	T * solution = CGeneticAlgorithm<T>(objectsSizesAndValuesTableSize, this).runGeneticAlgorithm(timeOfCalculationInSecundes);
 	return solution;
 }
-bool CKnapsackProblem::setInputData(int objectSizesAndValuesTableSize, double ** objectSizesAndValuesTable, int knapsackSize)
+template < class T >
+bool CKnapsackProblem<T>::setInputData(int objectSizesAndValuesTableSize, double ** objectSizesAndValuesTable, int knapsackSize)
 {
 	if (objectSizesAndValuesTableSize < 0 || objectSizesAndValuesTable == nullptr || knapsackSize<0)
 		return false;
@@ -30,31 +44,30 @@ bool CKnapsackProblem::setInputData(int objectSizesAndValuesTableSize, double **
 	return true;
 
 }
-double CKnapsackProblem::calculateValueofThisSolution(int * solutionTable)
-{
-	double ValueofThisSolution = 0;
-	double SizeofThisSolution = 0;
-	for (int i = 0; i < objectsSizesAndValuesTableSize; i++)
-	{
-		if (solutionTable[i] == I_TAKE_THIS_OBJECT_TO_SOLUTION)
-		{
-			ValueofThisSolution += (objectsValueAndSizesTable[i][0]);
-			SizeofThisSolution += (objectsValueAndSizesTable[i][1]);
-		}
-		else if (solutionTable[i] == I_DO_NOT_TAKE_THIS_OBJECT_TO_SOLUTION)
-			;//do nothing
-		else//wrong input data
-			return 0;
-	}
-	if (SizeofThisSolution > knapsackSize)
-		return 0;
-	else
-		return ValueofThisSolution;
 
+template < class T >
+double CKnapsackProblem<T>::calculateValueofThisSolution(T * solutionTable)
+{
+	double valueofThisSolution = 0;
+	double sizeofThisSolution = 0;
+	
+		for (int i = 0; i < objectsSizesAndValuesTableSize; i++)
+		{
+				valueofThisSolution += (objectsValueAndSizesTable[i][0])*(solutionTable[i]);
+				sizeofThisSolution += (objectsValueAndSizesTable[i][1])*(solutionTable[i]);
+		}
+		if (sizeofThisSolution > knapsackSize)
+			return -1;
+		else
+			return valueofThisSolution;
 }
-CKnapsackProblem::~CKnapsackProblem()
+template < class T >
+CKnapsackProblem<T>::~CKnapsackProblem()
 {
 	for(int i=0; i< objectsSizesAndValuesTableSize; i++)
 		delete [](objectsValueAndSizesTable[i]);
 	delete[] objectsValueAndSizesTable;
 }
+template class CKnapsackProblem < int >;
+template class CKnapsackProblem < bool >;
+template class CKnapsackProblem < double >;
